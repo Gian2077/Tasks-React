@@ -1,8 +1,8 @@
 import "./Main.css";
-export function Main() {
+export function Main({ children }) {
   return (
     <>
-      <main></main>
+      <main className="main">{children}</main>
     </>
   );
 }
