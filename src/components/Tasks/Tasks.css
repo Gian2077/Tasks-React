@@ -1,0 +1,10 @@
+.tasks {
+  background-color: #111;
+  border-radius: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 80%;
+  padding: 1.5rem 2rem;
+  width: 50%;
+}
