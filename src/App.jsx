@@ -5,13 +5,30 @@ import { Tasks } from "./components/Tasks/Tasks.jsx";
 import { Task } from "./components/Task/Task.jsx";
 import { Footer } from "./components/Footer/Footer.jsx";
 
+const tasks = [
+  {
+    id: 1,
+    title: "Study HTML",
+  },
+  {
+    id: 2,
+    title: "Study CSS",
+  },
+  {
+    id: 3,
+    title: "Study JavaScript",
+  },
+];
+
 function App() {
   return (
     <>
       <Header />
       <Main>
         <Tasks>
-          <Task></Task>
+          {tasks.map((task) => {
+            return <Task key={task.id} task={task} />;
+          })}
         </Tasks>
       </Main>
       <Footer />

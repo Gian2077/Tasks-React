@@ -1,8 +1,8 @@
 import "./Task.css";
-export function Task() {
+export function Task({ task }) {
   return (
     <>
-      <li>Test</li>
+      <li>{task.title}</li>
     </>
   );
 }
