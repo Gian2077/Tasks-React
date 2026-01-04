@@ -3,6 +3,7 @@ import { Header } from "./components/Header/Header.jsx";
 import { Main } from "./components/Main/Main.jsx";
 import { Tasks } from "./components/Tasks/Tasks.jsx";
 import { Task } from "./components/Task/Task.jsx";
+import { ButtonFAB } from "./components/Button-FAB/Button-FAB.jsx";
 import { Footer } from "./components/Footer/Footer.jsx";
 
 const tasks = [
@@ -30,6 +31,7 @@ function App() {
             return <Task key={task.id} task={task} />;
           })}
         </Tasks>
+        <ButtonFAB />
       </Main>
       <Footer />
     </>
