@@ -1,0 +1,41 @@
+.form-newtask {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+.form-newtask label {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.form-newtask input {
+  background-color: #333;
+  border: none;
+  border-radius: 0.1rem;
+  outline: none;
+  padding: 0.5rem 0.75rem;
+  transition: ease-in-out 0.3s;
+  width: 100%;
+}
+.btn-addtask {
+  background-color: #333;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-weight: 700;
+  outline: none;
+  padding: 0.5rem 1rem;
+  transition: ease-in-out 0.3s;
+  width: 100%;
+}
+.form-newtask input:hover,
+.btn-addtask:hover {
+  background-color: #555;
+  transition: ease-in-out 0.3s;
+}
+.form-newtask input:focus,
+.btn-addtask:focus {
+  box-shadow: 0 0 0 0.1rem #ccc;
+  transition: ease-in-out 0.3s;
+}

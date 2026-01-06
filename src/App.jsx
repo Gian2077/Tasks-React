@@ -1,9 +1,12 @@
+import { useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header/Header.jsx";
 import { Main } from "./components/Main/Main.jsx";
 import { Tasks } from "./components/Tasks/Tasks.jsx";
 import { Task } from "./components/Task/Task.jsx";
-import { ButtonFAB } from "./components/Button-FAB/Button-FAB.jsx";
+import { Dialog } from "./components/Dialog/Dialog.jsx";
+import { ButtonFAB } from "./components/ButtonFAB/ButtonFAB.jsx";
+import { FormNewTask } from "./components/FormNewTask/FormNewTask.jsx";
 import { Footer } from "./components/Footer/Footer.jsx";
 
 const tasks = [
@@ -22,6 +25,14 @@ const tasks = [
 ];
 
 function App() {
+  const [showDialog, setShowDialog] = useState(false);
+  const toggleDialog = () => {
+    setShowDialog(!showDialog);
+  };
+  const addTask = () => {
+    console.log("Add Task");
+    toggleDialog();
+  };
   return (
     <>
       <Header />
@@ -31,7 +42,10 @@ function App() {
             return <Task key={task.id} task={task} />;
           })}
         </Tasks>
-        <ButtonFAB />
+        <Dialog isOpen={showDialog} onClose={toggleDialog}>
+          <FormNewTask onSubmit={addTask} />
+        </Dialog>
+        <ButtonFAB onClick={toggleDialog} />
       </Main>
       <Footer />
     </>
