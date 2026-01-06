@@ -9,28 +9,34 @@ import { ButtonFAB } from "./components/ButtonFAB/ButtonFAB.jsx";
 import { FormNewTask } from "./components/FormNewTask/FormNewTask.jsx";
 import { Footer } from "./components/Footer/Footer.jsx";
 
-const tasks = [
-  {
-    id: 1,
-    title: "Study HTML",
-  },
-  {
-    id: 2,
-    title: "Study CSS",
-  },
-  {
-    id: 3,
-    title: "Study JavaScript",
-  },
-];
-
 function App() {
   const [showDialog, setShowDialog] = useState(false);
+  const [tasks, setTasks] = useState([
+    {
+      id: 1,
+      title: "Study HTML",
+    },
+    {
+      id: 2,
+      title: "Study CSS",
+    },
+    {
+      id: 3,
+      title: "Study JavaScript",
+    },
+  ]);
   const toggleDialog = () => {
     setShowDialog(!showDialog);
   };
-  const addTask = () => {
-    console.log("Add Task");
+  const addTask = (formData) => {
+    const newTask = formData.get("newTask");
+    setTasks((prevState) => {
+      const task = {
+        id: prevState.length + 1,
+        title: newTask,
+      };
+      return [...prevState, task];
+    });
     toggleDialog();
   };
   return (
