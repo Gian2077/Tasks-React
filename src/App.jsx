@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { use, useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header/Header.jsx";
 import { Main } from "./components/Main/Main.jsx";
@@ -8,35 +8,16 @@ import { Dialog } from "./components/Dialog/Dialog.jsx";
 import { ButtonFAB } from "./components/ButtonFAB/ButtonFAB.jsx";
 import { FormNewTask } from "./components/FormNewTask/FormNewTask.jsx";
 import { Footer } from "./components/Footer/Footer.jsx";
+import TaskContext from "./components/TaskProvider/TaskContext.js";
 
 function App() {
   const [showDialog, setShowDialog] = useState(false);
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      title: "Study HTML",
-    },
-    {
-      id: 2,
-      title: "Study CSS",
-    },
-    {
-      id: 3,
-      title: "Study JavaScript",
-    },
-  ]);
+  const { tasks, addTask } = use(TaskContext);
   const toggleDialog = () => {
     setShowDialog(!showDialog);
   };
-  const addTask = (formData) => {
-    const newTask = formData.get("newTask");
-    setTasks((prevState) => {
-      const task = {
-        id: prevState.length + 1,
-        title: newTask,
-      };
-      return [...prevState, task];
-    });
+  const handleFormSubmit = (formData) => {
+    addTask(formData);
     toggleDialog();
   };
   return (
@@ -49,7 +30,7 @@ function App() {
           })}
         </Tasks>
         <Dialog isOpen={showDialog} onClose={toggleDialog}>
-          <FormNewTask onSubmit={addTask} />
+          <FormNewTask onSubmit={handleFormSubmit} />
         </Dialog>
         <ButtonFAB onClick={toggleDialog} />
       </Main>
