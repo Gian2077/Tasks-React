@@ -1,20 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TaskContext from "./TaskContext.js";
 export function TaskProvider({ children }) {
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      title: "Study HTML",
-    },
-    {
-      id: 2,
-      title: "Study CSS",
-    },
-    {
-      id: 3,
-      title: "Study JavaScript",
-    },
-  ]);
+  const key = "tasks";
+  const savedTasks = localStorage.getItem(key);
+  const [tasks, setTasks] = useState(savedTasks ? JSON.parse(savedTasks) : []);
+  useEffect(() => {
+    localStorage.setItem(key, JSON.stringify(tasks));
+  }, [tasks]);
   const addTask = (formData) => {
     const newTask = formData.get("newTask");
     setTasks((prevState) => {
