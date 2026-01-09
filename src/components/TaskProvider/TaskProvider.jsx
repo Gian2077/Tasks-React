@@ -17,5 +17,12 @@ export function TaskProvider({ children }) {
       return [...prevState, task];
     });
   };
-  return <TaskContext value={{ tasks, addTask }}>{children}</TaskContext>;
+  const deleteTask = (target) => {
+    setTasks((prevState) => {
+      return prevState.filter((task) => task.id != target.id);
+    });
+  };
+  return (
+    <TaskContext value={{ tasks, addTask, deleteTask }}>{children}</TaskContext>
+  );
 }

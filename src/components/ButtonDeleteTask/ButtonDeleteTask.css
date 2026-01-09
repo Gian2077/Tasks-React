@@ -1,0 +1,7 @@
+.btn-deleteTask {
+  background-color: transparent;
+  border: none;
+}
+.btn-deleteTask i {
+  cursor: pointer;
+}
