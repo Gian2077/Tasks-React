@@ -13,8 +13,22 @@ export function TaskProvider({ children }) {
       const task = {
         id: prevState.length + 1,
         title: newTask,
+        completed: false,
       };
       return [...prevState, task];
+    });
+  };
+  const toggleTask = (target) => {
+    setTasks((prevState) => {
+      return prevState.map((task) => {
+        if (task.id === target.id) {
+          return {
+            ...task,
+            completed: !task.completed,
+          };
+        }
+        return task;
+      });
     });
   };
   const deleteTask = (target) => {
@@ -23,6 +37,8 @@ export function TaskProvider({ children }) {
     });
   };
   return (
-    <TaskContext value={{ tasks, addTask, deleteTask }}>{children}</TaskContext>
+    <TaskContext value={{ tasks, addTask, toggleTask, deleteTask }}>
+      {children}
+    </TaskContext>
   );
 }

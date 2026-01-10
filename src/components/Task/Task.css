@@ -6,3 +6,6 @@
   display: flex;
   justify-content: space-between;
 }
+.completed {
+  background-color: #00ff00;
+}
