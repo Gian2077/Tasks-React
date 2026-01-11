@@ -6,7 +6,7 @@ import { Tasks } from "./components/Tasks/Tasks.jsx";
 import { Task } from "./components/Task/Task.jsx";
 import { Dialog } from "./components/Dialog/Dialog.jsx";
 import { ButtonFAB } from "./components/ButtonFAB/ButtonFAB.jsx";
-import { FormNewTask } from "./components/FormNewTask/FormNewTask.jsx";
+import { FormTask } from "./components/FormTask/FormTask.jsx";
 import { Footer } from "./components/Footer/Footer.jsx";
 import TaskContext from "./components/TaskProvider/TaskContext.js";
 
@@ -30,7 +30,7 @@ function App() {
           })}
         </Tasks>
         <Dialog isOpen={showDialog} onClose={toggleDialog}>
-          <FormNewTask onSubmit={handleFormSubmit} />
+          <FormTask onSubmit={handleFormSubmit} />
         </Dialog>
         <ButtonFAB onClick={toggleDialog} />
       </Main>

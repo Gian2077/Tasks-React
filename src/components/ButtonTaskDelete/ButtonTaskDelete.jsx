@@ -1,5 +1,5 @@
-import "./ButtonDeleteTask.css";
-export function ButtonDeleteTask({ onClick }) {
+import "./ButtonTaskDelete.css";
+export function ButtonTaskDelete({ onClick }) {
   return (
     <>
       <button className="btn-deleteTask" onClick={onClick}>

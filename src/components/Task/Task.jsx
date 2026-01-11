@@ -1,8 +1,8 @@
 import { use } from "react";
 import "./Task.css";
 import TaskContext from "../TaskProvider/TaskContext.js";
-import { ButtonToggleTask } from "../ButtonToggleTask/ButtonToggleTask.jsx";
-import { ButtonDeleteTask } from "../ButtonDeleteTask/ButtonDeleteTask";
+import { ButtonTaskToggleStatus } from "../ButtonTaskToggleStatus/ButtonTaskToggleStatus.jsx";
+import { ButtonTaskDelete } from "../ButtonTaskDelete/ButtonTaskDelete.jsx";
 export function Task({ task }) {
   const { toggleTask, deleteTask } = use(TaskContext);
   const styles = ["task"];
@@ -14,8 +14,8 @@ export function Task({ task }) {
       <li className={styles.join(" ")}>
         {task.title}
         <div className="actions">
-          <ButtonToggleTask onClick={() => toggleTask(task)} />
-          <ButtonDeleteTask onClick={() => deleteTask(task)} />
+          <ButtonTaskToggleStatus onClick={() => toggleTask(task)} />
+          <ButtonTaskDelete onClick={() => deleteTask(task)} />
         </div>
       </li>
     </>
