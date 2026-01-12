@@ -11,14 +11,22 @@ import { Footer } from "./components/Footer/Footer.jsx";
 import TaskContext from "./components/TaskProvider/TaskContext.js";
 
 function App() {
-  const [showDialog, setShowDialog] = useState(false);
-  const { tasks, addTask } = use(TaskContext);
-  const toggleDialog = () => {
-    setShowDialog(!showDialog);
-  };
+  const {
+    tasks,
+    showDialog,
+    openDialog,
+    closeDialog,
+    targetTask,
+    addTask,
+    editTask,
+  } = use(TaskContext);
   const handleFormSubmit = (formData) => {
-    addTask(formData);
-    toggleDialog();
+    if (targetTask) {
+      editTask(formData);
+    } else {
+      addTask(formData);
+    }
+    closeDialog();
   };
   return (
     <>
@@ -29,10 +37,13 @@ function App() {
             return <Task key={task.id} task={task} />;
           })}
         </Tasks>
-        <Dialog isOpen={showDialog} onClose={toggleDialog}>
-          <FormNewTask onSubmit={handleFormSubmit} />
+        <Dialog isOpen={showDialog} onClose={closeDialog}>
+          <FormNewTask
+            onSubmit={handleFormSubmit}
+            defaultValue={targetTask?.title}
+          />
         </Dialog>
-        <ButtonFAB onClick={toggleDialog} />
+        <ButtonFAB onClick={() => openDialog()} />
       </Main>
       <Footer />
     </>

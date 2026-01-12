@@ -5,7 +5,7 @@ import { ButtonToggleTask } from "../ButtonToggleTask/ButtonToggleTask.jsx";
 import { ButtonEditTask } from "../ButtonEditTask/ButtonEditTask.jsx";
 import { ButtonDeleteTask } from "../ButtonDeleteTask/ButtonDeleteTask";
 export function Task({ task }) {
-  const { toggleTask, deleteTask } = use(TaskContext);
+  const { openDialog, toggleTask, deleteTask } = use(TaskContext);
   const styles = ["task"];
   if (task.completed) {
     styles.push("completed");
@@ -16,7 +16,7 @@ export function Task({ task }) {
         {task.title}
         <div className="actions">
           <ButtonToggleTask onClick={() => toggleTask(task)} />
-          <ButtonEditTask onClick={() => console.log("Edit Task")} />
+          <ButtonEditTask onClick={() => openDialog(task)} />
           <ButtonDeleteTask onClick={() => deleteTask(task)} />
         </div>
       </li>
