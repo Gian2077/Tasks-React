@@ -1,10 +1,5 @@
-<<<<<<< HEAD:src/components/FormNewTask/FormNewTask.jsx
-import "./FormNewTask.css";
-export function FormNewTask({ onSubmit, defaultValue }) {
-=======
 import "./FormTask.css";
-export function FormTask({ onSubmit }) {
->>>>>>> 611e83358ca648d3e735875884db71d774a07e7e:src/components/FormTask/FormTask.jsx
+export function FormTask({ onSubmit, defaultValue }) {
   return (
     <>
       <form action={onSubmit} className="form-task">

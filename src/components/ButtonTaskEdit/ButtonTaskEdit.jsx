@@ -1,5 +1,5 @@
-import "./ButtonEditTask.css";
-export function ButtonEditTask({ onClick }) {
+import "./ButtonTaskEdit.css";
+export function ButtonTaskEdit({ onClick }) {
   return (
     <>
       <button className="btn-editTask" onClick={onClick}>
