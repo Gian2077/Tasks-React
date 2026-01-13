@@ -20,11 +20,11 @@ export function TaskProvider({ children }) {
     setTargetTask(null);
   };
   const addTask = (formData) => {
-    const newTask = formData.get("newTask");
+    const title = formData.get("title");
     setTasks((prevState) => {
       const task = {
         id: prevState.length + 1,
-        title: newTask,
+        title: title,
         completed: false,
       };
       return [...prevState, task];
@@ -49,7 +49,7 @@ export function TaskProvider({ children }) {
         if (task.id === targetTask.id) {
           return {
             ...task,
-            title: formData.get("newTask"),
+            title: formData.get("title"),
           };
         }
         return task;

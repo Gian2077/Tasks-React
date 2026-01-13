@@ -6,7 +6,7 @@ import { Tasks } from "./components/Tasks/Tasks.jsx";
 import { Task } from "./components/Task/Task.jsx";
 import { Dialog } from "./components/Dialog/Dialog.jsx";
 import { ButtonFAB } from "./components/ButtonFAB/ButtonFAB.jsx";
-import { FormTask } from "./components/FormTask/FormTask.jsx";
+import { FormTask } from "./components/FormTask";
 import { Footer } from "./components/Footer/Footer.jsx";
 import TaskContext from "./components/TaskProvider/TaskContext.js";
 
