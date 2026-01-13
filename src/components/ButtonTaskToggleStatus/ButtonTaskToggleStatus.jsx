@@ -1,5 +1,5 @@
-import "./ButtonToggleTask.css";
-export function ButtonToggleTask({ onClick }) {
+import "./ButtonTaskToggleStatus.css";
+export function ButtonTaskToggleStatus({ onClick }) {
   return (
     <>
       <button className="btn-toggleTask" onClick={onClick}>

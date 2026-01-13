@@ -1,4 +1,4 @@
-import { use, useState } from "react";
+import { use } from "react";
 import "./App.css";
 import { Header } from "./components/Header/Header.jsx";
 import { Main } from "./components/Main/Main.jsx";
@@ -6,7 +6,7 @@ import { Tasks } from "./components/Tasks/Tasks.jsx";
 import { Task } from "./components/Task/Task.jsx";
 import { Dialog } from "./components/Dialog/Dialog.jsx";
 import { ButtonFAB } from "./components/ButtonFAB/ButtonFAB.jsx";
-import { FormNewTask } from "./components/FormNewTask/FormNewTask.jsx";
+import { FormTask } from "./components/FormTask/FormTask.jsx";
 import { Footer } from "./components/Footer/Footer.jsx";
 import TaskContext from "./components/TaskProvider/TaskContext.js";
 
@@ -38,7 +38,7 @@ function App() {
           })}
         </Tasks>
         <Dialog isOpen={showDialog} onClose={closeDialog}>
-          <FormNewTask
+          <FormTask
             onSubmit={handleFormSubmit}
             defaultValue={targetTask?.title}
           />
