@@ -1,7 +1,7 @@
 import { use } from "react";
 import "./Task.css";
 import TaskContext from "../TaskProvider/TaskContext.js";
-import { ButtonTaskToggleStatus } from "../ButtonTaskToggleStatus/ButtonTaskToggleStatus.jsx";
+import { ButtonTaskToggleStatus } from "../ButtonTaskToggleStatus";
 import { ButtonTaskEdit } from "../ButtonTaskEdit/ButtonTaskEdit.jsx";
 import { ButtonTaskDelete } from "../ButtonTaskDelete/ButtonTaskDelete.jsx";
 export function Task({ task }) {

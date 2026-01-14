@@ -1,8 +1,8 @@
-import "./ButtonTaskToggleStatus.css";
+import styles from "./ButtonTaskToggleStatus.module.css";
 export function ButtonTaskToggleStatus({ onClick }) {
   return (
     <>
-      <button className="btn-toggleTask" onClick={onClick}>
+      <button className={styles.btn} onClick={onClick}>
         <i className="bi bi-check-circle"></i>
       </button>
     </>

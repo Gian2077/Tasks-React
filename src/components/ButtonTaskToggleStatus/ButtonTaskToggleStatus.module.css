@@ -1,11 +1,11 @@
-.btn-toggleTask {
+.btn {
   background-color: transparent;
   border: none;
 }
-.btn-toggleTask i {
+.btn i {
   color: #00ff00;
   cursor: pointer;
 }
-.completed .btn-toggleTask i {
+.completed .btn i {
   color: #fff;
 }
