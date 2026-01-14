@@ -1,7 +1,7 @@
-.btn-editTask {
+.btn {
   background-color: transparent;
   border: none;
 }
-.btn-editTask i {
+.btn i {
   cursor: pointer;
 }
