@@ -1,4 +1,4 @@
-.btn-fab {
+.btn {
   background-color: #333;
   border: none;
   border-radius: 50%;
@@ -12,7 +12,7 @@
   right: 0;
   transition: 0.3s;
 }
-.fab:hover,
-.fab:focus {
+.btn:hover,
+.btn:focus {
   background-color: #555;
 }

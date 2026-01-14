@@ -1,8 +1,8 @@
-import "./ButtonFAB.css";
+import styles from "./ButtonFAB.module.css";
 export function ButtonFAB({ onClick }) {
   return (
     <>
-      <button className="btn-fab" onClick={onClick}>
+      <button className={styles.btn} onClick={onClick}>
         <i className="bi bi-plus"></i>
       </button>
     </>
