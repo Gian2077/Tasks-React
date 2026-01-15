@@ -1,10 +1,15 @@
 .tasks {
+  -ms-overflow-style: none;
   background-color: #111;
   border-radius: 0.3rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  height: 80%;
+  height: 90%;
+  overflow-y: scroll;
   padding: 1.5rem 2rem;
   width: 50%;
+}
+ul::-webkit-scrollbar {
+  display: none;
 }

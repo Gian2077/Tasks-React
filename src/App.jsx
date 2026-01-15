@@ -1,8 +1,8 @@
 import { use } from "react";
 import "./App.css";
 import { Header } from "./components/Header/Header.jsx";
-import { Main } from "./components/Main/Main.jsx";
-import { Tasks } from "./components/Tasks/Tasks.jsx";
+import { Main } from "./components/Main";
+import { Tasks } from "./components/Tasks";
 import { Task } from "./components/Task/Task.jsx";
 import { Dialog } from "./components/Dialog/Dialog.jsx";
 import { ButtonFAB } from "./components/ButtonFAB";

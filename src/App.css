@@ -9,6 +9,7 @@
   grid-template-rows: auto 1fr auto;
   height: 100vh;
   max-width: 100%;
+  overflow: hidden;
   width: 100vw;
 }
 h1,
