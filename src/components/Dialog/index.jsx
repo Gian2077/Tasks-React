@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import "./Dialog.css";
+import { useEffect, useRef } from "react";
+import styles from "./Dialog.module.css";
 export function Dialog({ isOpen, onClose, children }) {
   const dialogRef = useRef(null);
   useEffect(() => {
@@ -17,13 +17,13 @@ export function Dialog({ isOpen, onClose, children }) {
   };
   return (
     <>
-      <dialog className="dialog" ref={dialogRef}>
-        <div className="dialog-header">
-          <button className="btn-close" onClick={onClose}>
+      <dialog className={styles.dialog} ref={dialogRef}>
+        <div className={styles.header}>
+          <button className={styles.btn} onClick={onClose}>
             <i className="bi bi-x"></i>
           </button>
         </div>
-        <div className="dialog-body">{children}</div>
+        <div className={styles.body}>{children}</div>
       </dialog>
     </>
   );

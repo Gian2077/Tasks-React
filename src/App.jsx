@@ -5,7 +5,7 @@ import { Header } from "./components/Header/Header.jsx";
 import { Main } from "./components/Main";
 import { Tasks } from "./components/Tasks";
 import { Task } from "./components/Task/Task.jsx";
-import { Dialog } from "./components/Dialog/Dialog.jsx";
+import { Dialog } from "./components/Dialog";
 import { ButtonFAB } from "./components/ButtonFAB";
 import { FormTask } from "./components/FormTask";
 import { Footer } from "./components/Footer/Footer.jsx";

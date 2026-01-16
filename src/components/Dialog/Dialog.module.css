@@ -5,13 +5,13 @@
   padding: 1rem;
   border-radius: 0.3rem;
 }
-.dialog-header {
+.header {
   align-items: center;
   display: grid;
   grid-template-columns: 1fr auto;
   justify-content: center;
 }
-.btn-close {
+.btn {
   background-color: transparent;
   border: none;
   cursor: pointer;
