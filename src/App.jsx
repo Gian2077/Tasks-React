@@ -1,5 +1,6 @@
 import { use } from "react";
 import "./App.css";
+import TaskContext from "./components/TaskProvider/TaskContext.js";
 import { Header } from "./components/Header/Header.jsx";
 import { Main } from "./components/Main";
 import { Tasks } from "./components/Tasks";
@@ -8,7 +9,7 @@ import { Dialog } from "./components/Dialog/Dialog.jsx";
 import { ButtonFAB } from "./components/ButtonFAB";
 import { FormTask } from "./components/FormTask";
 import { Footer } from "./components/Footer/Footer.jsx";
-import TaskContext from "./components/TaskProvider/TaskContext.js";
+import { EmptyState } from "./components/EmptyState";
 
 function App() {
   const {
@@ -36,6 +37,7 @@ function App() {
           {tasks.map((task) => {
             return <Task key={task.id} task={task} />;
           })}
+          {tasks.length === 0 && <EmptyState />}
         </Tasks>
         <Dialog isOpen={showDialog} onClose={closeDialog}>
           <FormTask
