@@ -3,9 +3,11 @@
   border: none;
 }
 .btn i {
-  color: #00ff00;
   cursor: pointer;
 }
-.completed .btn i {
-  color: #fff;
+.green {
+  color: #00ff00;
+}
+.red {
+  color: #ff0000;
 }

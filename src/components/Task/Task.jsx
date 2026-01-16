@@ -15,7 +15,10 @@ export function Task({ task }) {
       <li className={styles.join(" ")}>
         {task.title}
         <div className="actions">
-          <ButtonTaskToggleStatus onClick={() => toggleTask(task)} />
+          <ButtonTaskToggleStatus
+            onClick={() => toggleTask(task)}
+            task={task}
+          />
           <ButtonTaskEdit onClick={() => openDialog(task)} />
           <ButtonTaskDelete onClick={() => deleteTask(task)} />
         </div>
