@@ -4,7 +4,7 @@ import TaskContext from "./components/TaskProvider/TaskContext.js";
 import { Header } from "./components/Header";
 import { Main } from "./components/Main";
 import { Tasks } from "./components/Tasks";
-import { Task } from "./components/Task/Task.jsx";
+import { Task } from "./components/Task";
 import { Dialog } from "./components/Dialog";
 import { ButtonFAB } from "./components/ButtonFAB";
 import { FormTask } from "./components/FormTask";

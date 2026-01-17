@@ -1,9 +1,9 @@
 import { use } from "react";
 import "./Task.css";
 import TaskContext from "../TaskProvider/TaskContext.js";
-import { ButtonTaskToggleStatus } from "../ButtonTaskToggleStatus";
-import { ButtonTaskEdit } from "../ButtonTaskEdit";
-import { ButtonTaskDelete } from "../ButtonTaskDelete";
+import { ButtonTaskToggleStatus } from "../ButtonTaskToggleStatus/index.jsx";
+import { ButtonTaskEdit } from "../ButtonTaskEdit/index.jsx";
+import { ButtonTaskDelete } from "../ButtonTaskDelete/index.jsx";
 export function Task({ task }) {
   const { openDialog, toggleTask, deleteTask } = use(TaskContext);
   const styles = ["task"];
