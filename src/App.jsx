@@ -8,7 +8,7 @@ import { Task } from "./components/Task/Task.jsx";
 import { Dialog } from "./components/Dialog";
 import { ButtonFAB } from "./components/ButtonFAB";
 import { FormTask } from "./components/FormTask";
-import { Footer } from "./components/Footer/Footer.jsx";
+import { Footer } from "./components/Footer";
 import { EmptyState } from "./components/EmptyState";
 
 function App() {

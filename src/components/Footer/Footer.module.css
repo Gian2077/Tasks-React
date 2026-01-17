@@ -1,4 +1,4 @@
-footer {
+.footer {
   background-color: #111;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
