@@ -1,7 +1,7 @@
 import { use } from "react";
 import "./App.css";
 import TaskContext from "./components/TaskProvider/TaskContext.js";
-import { Header } from "./components/Header/Header.jsx";
+import { Header } from "./components/Header";
 import { Main } from "./components/Main";
 import { Tasks } from "./components/Tasks";
 import { Task } from "./components/Task/Task.jsx";
