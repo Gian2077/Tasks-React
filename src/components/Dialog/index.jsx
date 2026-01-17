@@ -19,6 +19,7 @@ export function Dialog({ isOpen, onClose, children }) {
     <>
       <dialog className={styles.dialog} ref={dialogRef}>
         <div className={styles.header}>
+          <h2 className={styles.heading}>Task</h2>
           <button className={styles.btn} onClick={onClose}>
             <i className="bi bi-x"></i>
           </button>
