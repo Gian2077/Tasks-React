@@ -6,6 +6,10 @@
   display: flex;
   justify-content: space-between;
 }
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
 .completed {
   background-color: #00ff00;
 }
