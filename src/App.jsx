@@ -10,6 +10,7 @@ import { ButtonFAB } from "./components/ButtonFAB";
 import { FormTask } from "./components/FormTask";
 import { Footer } from "./components/Footer";
 import { EmptyState } from "./components/EmptyState";
+import { TaskGroup } from "./components/TaskGroup/index.jsx";
 
 function App() {
   const {
@@ -33,12 +34,30 @@ function App() {
     <>
       <Header />
       <Main>
-        <Tasks>
-          {tasks.map((task) => {
+        <TaskGroup
+          title="Daily Tasks"
+          tasks={tasks.map((task) => {
             return <Task key={task.id} task={task} />;
           })}
-          {tasks.length === 0 && <EmptyState />}
-        </Tasks>
+        />
+        <TaskGroup
+          title="Weekly Tasks"
+          tasks={tasks.map((task) => {
+            return <Task key={task.id} task={task} />;
+          })}
+        />
+        <TaskGroup
+          title="Monthly Tasks"
+          tasks={tasks.map((task) => {
+            return <Task key={task.id} task={task} />;
+          })}
+        />
+        <TaskGroup
+          title="Yearly Tasks"
+          tasks={tasks.map((task) => {
+            return <Task key={task.id} task={task} />;
+          })}
+        />
         <Dialog isOpen={showDialog} onClose={closeDialog}>
           <FormTask
             onSubmit={handleFormSubmit}

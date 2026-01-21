@@ -5,10 +5,10 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  height: 90%;
+  height: 100%;
+  width: 100%;
   overflow-y: scroll;
   padding: 1.5rem 2rem;
-  width: 50%;
 }
 ul::-webkit-scrollbar {
   display: none;
