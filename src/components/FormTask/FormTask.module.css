@@ -39,7 +39,22 @@
 }
 .wrapper {
   align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
   display: flex;
   gap: 0.5rem;
   width: 100%;
+}
+.radio {
+  cursor: pointer;
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+.radio input[type="radio"] {
+  margin: 0;
+}
+.radio input[type="radio"] {
+  outline: none;
+  box-shadow: none;
 }

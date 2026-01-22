@@ -25,6 +25,7 @@ export function TaskProvider({ children }) {
       const task = {
         id: prevState.length + 1,
         title: title,
+        type: formData.get("type"),
         completed: false,
       };
       return [...prevState, task];
