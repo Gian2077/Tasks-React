@@ -61,7 +61,8 @@ function App() {
         <Dialog isOpen={showDialog} onClose={closeDialog}>
           <FormTask
             onSubmit={handleFormSubmit}
-            defaultValue={targetTask?.title}
+            taskTitle={targetTask?.title}
+            taskType={targetTask?.type}
           />
         </Dialog>
         <ButtonFAB onClick={() => openDialog()} />

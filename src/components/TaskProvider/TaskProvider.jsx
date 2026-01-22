@@ -51,6 +51,7 @@ export function TaskProvider({ children }) {
           return {
             ...task,
             title: formData.get("title"),
+            type: formData.get("type"),
           };
         }
         return task;

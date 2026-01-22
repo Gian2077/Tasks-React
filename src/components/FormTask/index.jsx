@@ -1,23 +1,48 @@
 import styles from "./FormTask.module.css";
-export function FormTask({ onSubmit, defaultValue }) {
+export function FormTask({ onSubmit, taskTitle, taskType }) {
   return (
     <>
       <form action={onSubmit} className={styles.form}>
         <div className={styles.wrapper}>
           <div className={styles.radio}>
-            <input type="radio" name="type" id="daily" value="daily" required />
+            <input
+              type="radio"
+              name="type"
+              id="daily"
+              value="daily"
+              required
+              defaultChecked={taskType === "daily"}
+            />
             <label htmlFor="daily">Daily</label>
           </div>
           <div className={styles.radio}>
-            <input type="radio" name="type" id="weekly" value="weekly" />
+            <input
+              type="radio"
+              name="type"
+              id="weekly"
+              value="weekly"
+              defaultChecked={taskType === "weekly"}
+            />
             <label htmlFor="weekly">Weekly</label>
           </div>
           <div className={styles.radio}>
-            <input type="radio" name="type" id="monthly" value="monthly" />
+            <input
+              type="radio"
+              name="type"
+              id="monthly"
+              value="monthly"
+              defaultChecked={taskType === "monthly"}
+            />
             <label htmlFor="monthly">Monthly</label>
           </div>
           <div className={styles.radio}>
-            <input type="radio" name="type" id="yearly" value="yearly" />
+            <input
+              type="radio"
+              name="type"
+              id="yearly"
+              value="yearly"
+              defaultChecked={taskType === "yearly"}
+            />
             <label htmlFor="yearly">Yearly</label>
           </div>
         </div>
@@ -28,7 +53,7 @@ export function FormTask({ onSubmit, defaultValue }) {
             id="title"
             name="title"
             required
-            defaultValue={defaultValue}
+            defaultValue={taskTitle}
           />
         </div>
         <button className={styles.btn}>Add Task</button>
