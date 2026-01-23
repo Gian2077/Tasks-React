@@ -27,6 +27,7 @@ export function TaskProvider({ children }) {
         title: title,
         type: formData.get("type"),
         completed: false,
+        dateCreated: new Date().toISOString(),
       };
       return [...prevState, task];
     });
