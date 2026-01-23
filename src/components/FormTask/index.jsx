@@ -1,5 +1,12 @@
+import { useState, useEffect } from "react";
 import styles from "./FormTask.module.css";
 export function FormTask({ onSubmit, taskTitle, taskType }) {
+  const [type, setType] = useState("");
+  useEffect(() => {
+    if (taskType) {
+      setType(taskType);
+    }
+  }, [taskType]);
   return (
     <>
       <form action={onSubmit} className={styles.form}>
@@ -11,7 +18,8 @@ export function FormTask({ onSubmit, taskTitle, taskType }) {
               id="daily"
               value="daily"
               required
-              defaultChecked={taskType === "daily"}
+              checked={type === "daily"}
+              onChange={() => setType("daily")}
             />
             <label htmlFor="daily">Daily</label>
           </div>
@@ -21,7 +29,8 @@ export function FormTask({ onSubmit, taskTitle, taskType }) {
               name="type"
               id="weekly"
               value="weekly"
-              defaultChecked={taskType === "weekly"}
+              checked={type === "weekly"}
+              onChange={() => setType("weekly")}
             />
             <label htmlFor="weekly">Weekly</label>
           </div>
@@ -31,7 +40,8 @@ export function FormTask({ onSubmit, taskTitle, taskType }) {
               name="type"
               id="monthly"
               value="monthly"
-              defaultChecked={taskType === "monthly"}
+              checked={type === "monthly"}
+              onChange={() => setType("monthly")}
             />
             <label htmlFor="monthly">Monthly</label>
           </div>
@@ -41,7 +51,8 @@ export function FormTask({ onSubmit, taskTitle, taskType }) {
               name="type"
               id="yearly"
               value="yearly"
-              defaultChecked={taskType === "yearly"}
+              checked={type === "yearly"}
+              onChange={() => setType("yearly")}
             />
             <label htmlFor="yearly">Yearly</label>
           </div>

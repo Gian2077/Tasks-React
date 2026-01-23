@@ -3,13 +3,10 @@ import "./App.css";
 import TaskContext from "./components/TaskProvider/TaskContext.js";
 import { Header } from "./components/Header";
 import { Main } from "./components/Main";
-import { Tasks } from "./components/Tasks";
-import { Task } from "./components/Task";
 import { Dialog } from "./components/Dialog";
 import { ButtonFAB } from "./components/ButtonFAB";
 import { FormTask } from "./components/FormTask";
 import { Footer } from "./components/Footer";
-import { EmptyState } from "./components/EmptyState";
 import { TaskGroup } from "./components/TaskGroup/index.jsx";
 
 function App() {
@@ -36,27 +33,19 @@ function App() {
       <Main>
         <TaskGroup
           title="Daily Tasks"
-          tasks={tasks.map((task) => {
-            return <Task key={task.id} task={task} />;
-          })}
+          tasks={tasks.filter((task) => task.type === "daily")}
         />
         <TaskGroup
           title="Weekly Tasks"
-          tasks={tasks.map((task) => {
-            return <Task key={task.id} task={task} />;
-          })}
+          tasks={tasks.filter((task) => task.type === "weekly")}
         />
         <TaskGroup
           title="Monthly Tasks"
-          tasks={tasks.map((task) => {
-            return <Task key={task.id} task={task} />;
-          })}
+          tasks={tasks.filter((task) => task.type === "monthly")}
         />
         <TaskGroup
           title="Yearly Tasks"
-          tasks={tasks.map((task) => {
-            return <Task key={task.id} task={task} />;
-          })}
+          tasks={tasks.filter((task) => task.type === "yearly")}
         />
         <Dialog isOpen={showDialog} onClose={closeDialog}>
           <FormTask
