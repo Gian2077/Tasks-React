@@ -28,6 +28,7 @@ export function TaskProvider({ children }) {
         type: formData.get("type"),
         completed: false,
         dateCreated: new Date().toISOString(),
+        dateCompleted: null,
       };
       return [...prevState, task];
     });
@@ -39,6 +40,7 @@ export function TaskProvider({ children }) {
           return {
             ...task,
             completed: !task.completed,
+            dateCompleted: !task.completed ? new Date().toISOString() : null,
           };
         }
         return task;
