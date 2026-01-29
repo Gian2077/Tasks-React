@@ -13,3 +13,8 @@
 ul::-webkit-scrollbar {
   display: none;
 }
+@media screen and (max-width: 1024px) {
+  .tasks {
+    padding: 1rem 1.25rem;
+  }
+}
