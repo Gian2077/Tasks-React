@@ -1,10 +1,25 @@
 .task {
+  align-items: center;
   background-color: #333;
   border-radius: 0.3rem;
-  font-weight: 700;
-  padding: 0.5rem 0.75rem;
   display: flex;
+  font-weight: 700;
+  gap: 0.5rem;
+  height: 2rem;
   justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+}
+.wrapper {
+  container-type: inline-size;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+.title {
+  white-space: nowrap;
+}
+.task:hover .overflowing {
+  animation: scroll-text 5s linear infinite;
 }
 .actions {
   display: flex;
@@ -12,4 +27,12 @@
 }
 .completed {
   background-color: #00ff00;
+}
+@keyframes scroll-text {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-200cqw);
+  }
 }

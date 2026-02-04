@@ -28,40 +28,28 @@ export function TaskProvider({ children }) {
         );
         switch (task.type) {
           case "daily":
-            if (DAY === 1 && MONTH > monthCompleted) {
+            if (MONTH !== monthCompleted || DAY > dayCompleted) {
               return {
                 ...task,
-                completed: !task.completed,
-                dateCompleted: null,
-              };
-            } else if (DAY > dayCompleted) {
-              return {
-                ...task,
-                completed: !task.completed,
+                completed: false,
                 dateCompleted: null,
               };
             }
             break;
           case "weekly":
-            if (DAY_WEEK === 0 && DAY_WEEK < dayWeekCompleted) {
+            if (DAY_WEEK < dayWeekCompleted) {
               return {
                 ...task,
-                completed: !task.completed,
+                completed: false,
                 dateCompleted: null,
               };
             }
             break;
           case "monthly":
-            if (MONTH === 1 && YEAR > yearCompleted) {
+            if (YEAR !== yearCompleted || MONTH > monthCompleted) {
               return {
                 ...task,
-                completed: !task.completed,
-                dateCompleted: null,
-              };
-            } else if (MONTH > monthCompleted) {
-              return {
-                ...task,
-                completed: !task.completed,
+                completed: false,
                 dateCompleted: null,
               };
             }
@@ -70,7 +58,7 @@ export function TaskProvider({ children }) {
             if (YEAR > yearCompleted) {
               return {
                 ...task,
-                completed: !task.completed,
+                completed: false,
                 dateCompleted: null,
               };
             }
