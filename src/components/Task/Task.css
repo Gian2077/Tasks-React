@@ -13,7 +13,10 @@
   container-type: inline-size;
   flex: 1;
   min-width: 0;
-  overflow: hidden;
+  height: 2rem;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
 }
 .title {
   white-space: nowrap;
