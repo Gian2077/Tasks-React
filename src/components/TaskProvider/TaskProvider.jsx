@@ -84,7 +84,7 @@ export function TaskProvider({ children }) {
     const title = formData.get("title");
     setTasks((prevState) => {
       const task = {
-        id: prevState.length + 1,
+        id: crypto.randomUUID(),
         title: title,
         type: formData.get("type"),
         completed: false,
