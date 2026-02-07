@@ -12,7 +12,6 @@
 .wrapper {
   container-type: inline-size;
   flex: 1;
-  min-width: 0;
   height: 2rem;
   overflow-x: hidden;
   display: flex;
@@ -20,6 +19,7 @@
 }
 .title {
   white-space: nowrap;
+  min-width: 0;
 }
 .task:hover .overflowing {
   animation: scroll-text 5s linear infinite;
