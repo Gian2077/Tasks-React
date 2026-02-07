@@ -1,16 +1,24 @@
-# React + Vite
+# Tasks
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About the Project
+**Tasks** is a Web Application built using React that allows users to add and complete tasks. It is designed to improve productivity by visually displaying activities that must be done.
 
-Currently, two official plugins are available:
+### Features
+- Unordered list of tasks created by the user and stored in the browser using local storage.
+- Action buttons for completing, editing or deleting target tasks or each list item.
+- 'Complete Task' Button will change to 'Incomplete Task', allowing user to mark a completed task as incompleted.
+- Background color and 'Complete Task' action button will change when marking a task as completed, giving visual feedback to the user.
+- Floating Action Button that opens a dialog element for adding new tasks.
+- Dialog component for either adding new tasks or editing existing ones. When editing a task, the form inside the dialog will contain target task's current title.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies
+### Front-end
+- **React** - A JavaScript Library for Building User Interfaces
 
-## React Compiler
+### Development Tools
+- **Visual Studio Code** - Code Editor
+- **Prettier** - Code Formatter
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Known Issues
+- [1.0] Adding a new task after deleting one will duplicated IDs, editing or deleting tasks with duplicated IDs will take effect on all tasks with the same ID. (Fixed 2.0)
+- [2.0] When hovering over longer task titles, the scroll animation scrolls farther than necessary to display the hidden text.
