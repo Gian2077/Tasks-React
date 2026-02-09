@@ -110,6 +110,6 @@ Vite will build the application and it can be accessed either by pressing ctrl +
 
 ### 3.0
 
-- [] Fix known issues from 2.0
-- [] Add task lines
-- [] Add Action Button to break task lines into minor tasks
+- [ ] Fix known issues from 2.0
+- [ ] Add task lines
+- [ ] Add Action Button to break task lines into minor tasks
