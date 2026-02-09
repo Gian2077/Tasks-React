@@ -78,38 +78,38 @@ Vite will build the application and it can be accessed either by pressing ctrl +
 
 ### 1.0
 
-[x] Tasks List
-[x] Form to add new task
-[x] Dialog to display "Add Task" Form
-[x] Floating Action Button to open Dialog with "Add Task" Form
-[x] Action Button to mark task as completed
-[x] Action Button to revert task to incomplete
-[x] Action Button to edit task
-[x] Form to edit task
-[x] Dialog to display "Edit Task" Form
-[x] Show target task's previous information when opening the "Edit Task" Form
-[x] Action Button to delete task
-[x] Save user's tasks in the browser's local storage
-[x] Create Task Provider to handle task-related code
+- [x] Tasks List
+- [x] Form to add new task
+- [x] Dialog to display "Add Task" Form
+- [x] Floating Action Button to open Dialog with "Add Task" Form
+- [x] Action Button to mark task as completed
+- [x] Action Button to revert task to incomplete
+- [x] Action Button to edit task
+- [x] Form to edit task
+- [x] Dialog to display "Edit Task" Form
+- [x] Show target task's previous information when opening the "Edit Task" Form
+- [x] Action Button to delete task
+- [x] Save user's tasks in the browser's local storage
+- [x] Create Task Provider to handle task-related code
 
 ### 2.0
 
-[x] Fix known issues from 1.0
-[x] Generate unique IDs for each task
-[x] Add types to tasks (daily, weekyl, monthly and yearly)
-[x] Add Radio Button options for task types in the "Add Task" Form
-[x] Add Radio Button options for task types in the "Edit Task" Form
-[x] Auto-check target task's previous type when opening the "Edit Task" Form
-[x] Create separated lists for each task type and display them accordingly
-[x] Add Scheduler to application
-[x] Add "Created At" date to task when creating a new one
-[x] Add "Completed At" date to task when marking one as completed
-[x] Remove "Completed At" date to task when reverting one back to incomplete
-[x] Create Date Provider to handle date-related code
-[x] Add scroll animation to task titles when they are too long
+- [x] Fix known issues from 1.0
+- [x] Generate unique IDs for each task
+- [x] Add types to tasks (daily, weekyl, monthly and yearly)
+- [x] Add Radio Button options for task types in the "Add Task" Form
+- [x] Add Radio Button options for task types in the "Edit Task" Form
+- [x] Auto-check target task's previous type when opening the "Edit Task" Form
+- [x] Create separated lists for each task type and display them accordingly
+- [x] Add Scheduler to application
+- [x] Add "Created At" date to task when creating a new one
+- [x] Add "Completed At" date to task when marking one as completed
+- [x] Remove "Completed At" date to task when reverting one back to incomplete
+- [x] Create Date Provider to handle date-related code
+- [x] Add scroll animation to task titles when they are too long
 
 ### 3.0
 
-[] Fix known issues from 2.0
-[] Add task lines
-[] Add Action Button to break task lines into minor tasks
+- [] Fix known issues from 2.0
+- [] Add task lines
+- [] Add Action Button to break task lines into minor tasks
