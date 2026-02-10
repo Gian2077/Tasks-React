@@ -1,21 +1,24 @@
 import { useEffect, useRef, use } from "react";
 import styles from "./Dialog.module.css";
 import taskContext from "../TaskProvider/TaskContext.js";
-export function Dialog({ isOpen, onClose, children }) {
-  const { targetTask } = use(taskContext);
+import { FormTask } from "../FormTask/index.jsx";
+export function Dialog({ isOpen, onClose }) {
+  const { closeDialog, targetTask, addTask, editTask } = use(taskContext);
   const dialogRef = useRef(null);
   useEffect(() => {
     if (isOpen) {
-      openDialog();
+      dialogRef.current.showModal();
     } else {
-      closeDialog();
+      dialogRef.current.close();
     }
   }, [isOpen]);
-  const openDialog = () => {
-    dialogRef.current.showModal();
-  };
-  const closeDialog = () => {
-    dialogRef.current.close();
+  const handleFormSubmit = (formData) => {
+    if (targetTask) {
+      editTask(formData);
+    } else {
+      addTask(formData);
+    }
+    closeDialog();
   };
   return (
     <>
@@ -28,7 +31,15 @@ export function Dialog({ isOpen, onClose, children }) {
             <i className="bi bi-x"></i>
           </button>
         </div>
-        <div className={styles.body}>{children}</div>
+        <div className={styles.body}>
+          {isOpen && (
+            <FormTask
+              onSubmit={handleFormSubmit}
+              taskTitle={targetTask?.title}
+              taskType={targetTask?.type}
+            />
+          )}
+        </div>
       </dialog>
     </>
   );

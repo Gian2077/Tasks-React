@@ -39,7 +39,8 @@
 
 - [1.0] Adding a new task after deleting one will duplicated IDs, editing or deleting tasks with duplicated IDs will take effect on all tasks with the same ID. (Fixed [2.0])
 - [2.0] When hovering over longer task titles, the scroll animation scrolls farther than necessary to display the hidden text.
-- [2.0] After adding a task, opening the "Add Task" form again will have the previously checked radio button automatically checked.
+- [2.0] After adding a task, opening the "Add Task" form again will have the previously checked radio button automatically checked. (Fixed [3.0])
+- [2.0] Dialog and Form not responsive for Mobile and Smaller Screen Devices.
 
 ## How to Install
 
@@ -112,5 +113,6 @@ Vite will build the application and it can be accessed either by pressing ctrl +
 ### 3.0
 
 - [ ] Fix known issues from 2.0
+- [ ] Create Providers Directory
 - [ ] Add task lines
 - [ ] Add Action Button to break task lines into minor tasks

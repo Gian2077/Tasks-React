@@ -10,23 +10,7 @@ import { Footer } from "./components/Footer";
 import { TaskGroup } from "./components/TaskGroup/index.jsx";
 
 function App() {
-  const {
-    tasks,
-    showDialog,
-    openDialog,
-    closeDialog,
-    targetTask,
-    addTask,
-    editTask,
-  } = use(TaskContext);
-  const handleFormSubmit = (formData) => {
-    if (targetTask) {
-      editTask(formData);
-    } else {
-      addTask(formData);
-    }
-    closeDialog();
-  };
+  const { tasks, showDialog, openDialog, closeDialog } = use(TaskContext);
   return (
     <>
       <Header />
@@ -47,13 +31,7 @@ function App() {
           title="Yearly Tasks"
           tasks={tasks.filter((task) => task.type === "yearly")}
         />
-        <Dialog isOpen={showDialog} onClose={closeDialog}>
-          <FormTask
-            onSubmit={handleFormSubmit}
-            taskTitle={targetTask?.title}
-            taskType={targetTask?.type}
-          />
-        </Dialog>
+        <Dialog isOpen={showDialog} onClose={closeDialog} />
         <ButtonFAB onClick={() => openDialog()} />
       </Main>
       <Footer />
