@@ -105,6 +105,7 @@ Vite will build the application and it can be accessed either by pressing ctrl +
 - [x] Add "Created At" date to task when creating a new one
 - [x] Add "Completed At" date to task when marking one as completed
 - [x] Remove "Completed At" date to task when reverting one back to incomplete
+- [x] Create reset logic for reverting tasks back to incomplete when a certain amout of time has passed
 - [x] Create Date Provider to handle date-related code
 - [x] Add scroll animation to task titles when they are too long
 
