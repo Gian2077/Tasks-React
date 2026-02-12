@@ -60,8 +60,6 @@
   box-shadow: none;
 }
 @media screen and (max-width: 500px) {
-  .form {
-  }
   .wrapper:nth-child(1) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
