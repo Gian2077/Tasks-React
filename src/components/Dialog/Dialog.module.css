@@ -29,3 +29,17 @@
 .body {
   padding: 1rem 2rem;
 }
+@media screen and (max-width: 768px) {
+  .dialog {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .dialog {
+    height: 60vh;
+  }
+  .body {
+    padding: 1rem 1.5rem;
+    height: calc(60vh - 3.25rem);
+  }
+}

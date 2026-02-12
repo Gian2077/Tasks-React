@@ -4,7 +4,7 @@ export function Footer() {
     <>
       <footer className={styles.footer}>
         <p id={styles.developer}>Developed by Gian2077</p>
-        <p id={styles.version}>Version 1.0.0</p>
+        <p id={styles.version}>Version 2.0.0</p>
       </footer>
     </>
   );
