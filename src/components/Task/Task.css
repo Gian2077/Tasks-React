@@ -1,4 +1,6 @@
 .task {
+  --overflow-width: 0;
+  --animation-speed: 0s;
   align-items: center;
   background-color: #333;
   border-radius: 0.3rem;
@@ -22,7 +24,7 @@
   min-width: 0;
 }
 .task:hover .overflowing {
-  animation: scroll-text 5s linear infinite;
+  animation: scroll-text var(--animation-speed) linear infinite;
 }
 .actions {
   display: flex;
@@ -36,6 +38,6 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(-200cqw);
+    transform: translateX(calc(1 * var(--overflow-width)));
   }
 }

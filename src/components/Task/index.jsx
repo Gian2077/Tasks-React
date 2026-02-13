@@ -1,4 +1,4 @@
-import { use, useEffect, useRef, useState } from "react";
+import { use, useLayoutEffect, useRef, useState } from "react";
 import "./Task.css";
 import TaskContext from "../TaskProvider/TaskContext.js";
 import { ButtonTaskToggleStatus } from "../ButtonTaskToggleStatus/index.jsx";
@@ -6,18 +6,24 @@ import { ButtonTaskEdit } from "../ButtonTaskEdit/index.jsx";
 import { ButtonTaskDelete } from "../ButtonTaskDelete/index.jsx";
 export function Task({ task }) {
   const { openDialog, toggleTask, deleteTask } = use(TaskContext);
+  const taskRef = useRef(null);
   const textRef = useRef(null);
   const [isOverflowing, setIsOverflowing] = useState(false);
   const checkOverflow = (text) => {
-    setIsOverflowing(text.scrollWidth > text.clientWidth);
+    const overflowing = text.scrollWidth > text.clientWidth;
+    setIsOverflowing(overflowing);
+    return overflowing;
   };
   const calcOverflow = (text) => {
     return text.scrollWidth - text.clientWidth;
   };
-  useEffect(() => {
+  useLayoutEffect(() => {
+    const task = taskRef.current;
+    if (!task) return;
     const text = textRef.current;
-    if (!text) return;
     checkOverflow(text);
+    task.style.setProperty("--overflow-width", `-${calcOverflow(text)}px`);
+    task.style.setProperty("--animation-speed", `${calcOverflow(text) / 10}s`);
     window.addEventListener("resize", checkOverflow);
     return window.removeEventListener("resize", checkOverflow);
   }, [task.title]);
@@ -27,7 +33,7 @@ export function Task({ task }) {
   }
   return (
     <>
-      <li className={styles.join(" ")}>
+      <li className={styles.join(" ")} ref={taskRef}>
         <div className="wrapper">
           <h3
             className={`title ${isOverflowing ? "overflowing" : ""}`}
