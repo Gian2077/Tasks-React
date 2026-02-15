@@ -34,7 +34,13 @@ export function TaskProvider({ children }) {
             }
             break;
           case "weekly":
-            if (DAY_WEEK < dayWeekCompleted) {
+            if (DAY !== dayCompleted && DAY_WEEK === 0) {
+              return {
+                ...task,
+                completed: false,
+                dateCompleted: null,
+              };
+            } else if (DAY_WEEK < dayWeekCompleted) {
               return {
                 ...task,
                 completed: false,

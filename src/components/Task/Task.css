@@ -38,6 +38,6 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(calc(1 * var(--overflow-width)));
+    transform: translateX(var(--overflow-width));
   }
 }

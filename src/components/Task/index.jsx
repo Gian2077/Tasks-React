@@ -12,7 +12,6 @@ export function Task({ task }) {
   const checkOverflow = (text) => {
     const overflowing = text.scrollWidth > text.clientWidth;
     setIsOverflowing(overflowing);
-    return overflowing;
   };
   const calcOverflow = (text) => {
     return text.scrollWidth - text.clientWidth;
@@ -22,8 +21,14 @@ export function Task({ task }) {
     if (!task) return;
     const text = textRef.current;
     checkOverflow(text);
-    task.style.setProperty("--overflow-width", `-${calcOverflow(text)}px`);
-    task.style.setProperty("--animation-speed", `${calcOverflow(text) / 10}s`);
+    task.style.setProperty(
+      "--overflow-width",
+      `-${calcOverflow(text) + 10}cqw`,
+    );
+    task.style.setProperty(
+      "--animation-speed",
+      `${calcOverflow(text) / 30 > 2 ? calcOverflow(text) / 30 : 5}s`,
+    );
     window.addEventListener("resize", checkOverflow);
     return window.removeEventListener("resize", checkOverflow);
   }, [task.title]);
