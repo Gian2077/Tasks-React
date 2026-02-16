@@ -1,6 +1,6 @@
 import { use, useLayoutEffect, useRef, useState } from "react";
 import "./Task.css";
-import TaskContext from "../TaskProvider/TaskContext.js";
+import TaskContext from "../Providers/TaskProvider/TaskContext.js";
 import { ButtonTaskToggleStatus } from "../ButtonTaskToggleStatus/index.jsx";
 import { ButtonTaskEdit } from "../ButtonTaskEdit/index.jsx";
 import { ButtonTaskDelete } from "../ButtonTaskDelete/index.jsx";

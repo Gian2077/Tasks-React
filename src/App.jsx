@@ -1,11 +1,10 @@
 import { use } from "react";
 import "./App.css";
-import TaskContext from "./components/TaskProvider/TaskContext.js";
+import TaskContext from "./components/Providers/TaskProvider/TaskContext.js";
 import { Header } from "./components/Header";
 import { Main } from "./components/Main";
 import { Dialog } from "./components/Dialog";
 import { ButtonFAB } from "./components/ButtonFAB";
-import { FormTask } from "./components/FormTask";
 import { Footer } from "./components/Footer";
 import { TaskGroup } from "./components/TaskGroup/index.jsx";
 

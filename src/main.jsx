@@ -2,8 +2,8 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
-import { TaskProvider } from "./components/TaskProvider/TaskProvider.jsx";
-import { DateProvider } from "./components/DateProvider/DateProvider.jsx";
+import { TaskProvider } from "./components/Providers/TaskProvider/TaskProvider.jsx";
+import { DateProvider } from "./components/Providers/DateProvider/DateProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

@@ -1,6 +1,6 @@
 import { useEffect, useRef, use } from "react";
 import styles from "./Dialog.module.css";
-import taskContext from "../TaskProvider/TaskContext.js";
+import taskContext from "../Providers/TaskProvider/TaskContext.js";
 import { FormTask } from "../FormTask/index.jsx";
 export function Dialog({ isOpen, onClose }) {
   const { closeDialog, targetTask, addTask, editTask } = use(taskContext);
