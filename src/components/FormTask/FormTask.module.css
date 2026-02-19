@@ -29,11 +29,13 @@
   width: 50%;
 }
 .form input:hover,
+.wrapper:nth-child(3) textarea:hover,
 .btn:hover {
   background-color: #555;
   transition: ease-in-out 0.3s;
 }
 .form input:focus,
+.wrapper:nth-child(3) textarea:focus,
 .btn:focus {
   box-shadow: 0 0 0 0.1rem #ccc;
   transition: ease-in-out 0.3s;
@@ -45,6 +47,30 @@
   display: flex;
   gap: 0.5rem;
   width: 100%;
+}
+.wrapper:nth-child(2) input::placeholder {
+  color: #777;
+  font-family: "Inter", sans-serif;
+}
+.wrapper:nth-child(3) {
+  flex-direction: column;
+}
+.wrapper:nth-child(3) label {
+  align-self: flex-start;
+}
+.wrapper:nth-child(3) textarea {
+  height: 5rem;
+  width: 100%;
+  background-color: #333;
+  border: none;
+  outline: none;
+  padding: 0.5rem 0.75rem;
+  resize: none;
+  border-radius: 0.1rem;
+}
+.wrapper:nth-child(3) textarea::placeholder {
+  color: #777;
+  font-family: "Inter", sans-serif;
 }
 .radio {
   cursor: pointer;
@@ -71,6 +97,9 @@
   .radio label {
     align-self: center;
     justify-self: center;
+  }
+  .wrapper:nth-child(2) label {
+    color: red;
   }
   .btn {
     margin-top: auto;

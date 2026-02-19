@@ -65,7 +65,16 @@ export function FormTask({ onSubmit, taskTitle, taskType }) {
             name="title"
             required
             defaultValue={taskTitle}
+            placeholder="Task Title"
           />
+        </div>
+        <div className={styles.wrapper}>
+          <label htmlFor="description">Description</label>
+          <textarea
+            name="description"
+            id="description"
+            placeholder="Task Description"
+          ></textarea>
         </div>
         <button className={styles.btn}>Add Task</button>
       </form>
