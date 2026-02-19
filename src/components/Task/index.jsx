@@ -1,5 +1,5 @@
 import { use, useLayoutEffect, useRef, useState } from "react";
-import "./Task.css";
+import styles from "./Task.module.css";
 import TaskContext from "../Providers/TaskProvider/TaskContext.js";
 import { ButtonTaskToggleStatus } from "../ButtonTaskToggleStatus/index.jsx";
 import { ButtonTaskEdit } from "../ButtonTaskEdit/index.jsx";
@@ -32,29 +32,32 @@ export function Task({ task }) {
     window.addEventListener("resize", checkOverflow);
     return window.removeEventListener("resize", checkOverflow);
   }, [task.title]);
-  const styles = ["task"];
-  if (task.completed) {
-    styles.push("completed");
-  }
   return (
     <>
-      <li className={styles.join(" ")} ref={taskRef}>
-        <div className="wrapper">
-          <h3
-            className={`title ${isOverflowing ? "overflowing" : ""}`}
-            ref={textRef}
-          >
-            {task.title}
-          </h3>
-        </div>
-        <div className="actions">
-          <ButtonTaskToggleStatus
-            onClick={() => toggleTask(task)}
-            task={task}
-          />
-          <ButtonTaskEdit onClick={() => openDialog(task)} />
-          <ButtonTaskDelete onClick={() => deleteTask(task)} />
-        </div>
+      <li
+        className={`${styles.task} ${task.completed ? styles.completed : ""}`}
+      >
+        <details className={styles.details}>
+          <summary className={styles.summary} ref={taskRef}>
+            <div className={styles.wrapper}>
+              <h3
+                className={`${styles.title} ${isOverflowing ? styles.overflowing : ""}`}
+                ref={textRef}
+              >
+                {task.title}
+              </h3>
+            </div>
+            <div className={styles.actions}>
+              <ButtonTaskToggleStatus
+                onClick={() => toggleTask(task)}
+                task={task}
+              />
+              <ButtonTaskEdit onClick={() => openDialog(task)} />
+              <ButtonTaskDelete onClick={() => deleteTask(task)} />
+            </div>
+          </summary>
+          <p>Details for task</p>
+        </details>
       </li>
     </>
   );

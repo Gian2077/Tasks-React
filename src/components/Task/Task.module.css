@@ -1,9 +1,11 @@
 .task {
+  background-color: #333;
+  border-radius: 0.3rem;
+}
+.summary {
   --overflow-width: 0;
   --animation-speed: 0s;
   align-items: center;
-  background-color: #333;
-  border-radius: 0.3rem;
   display: flex;
   font-weight: 700;
   gap: 0.5rem;
@@ -11,19 +13,28 @@
   justify-content: space-between;
   padding: 0.5rem 0.75rem;
 }
+.details p {
+  background-color: #222;
+  border-radius: 0 0 0.3rem 0.3rem;
+  font-size: 0.75rem;
+  padding: 1rem;
+}
 .wrapper {
+  align-items: center;
   container-type: inline-size;
+  display: flex;
   flex: 1;
   height: 2rem;
   overflow-x: hidden;
-  display: flex;
-  align-items: center;
+}
+.wrapper:nth-child(1) {
+  cursor: pointer;
 }
 .title {
-  white-space: nowrap;
   min-width: 0;
+  white-space: nowrap;
 }
-.task:hover .overflowing {
+.summary:hover .overflowing {
   animation: scroll-text var(--animation-speed) linear infinite;
 }
 .actions {

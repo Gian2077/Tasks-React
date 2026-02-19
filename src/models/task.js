@@ -7,4 +7,8 @@ export class Task {
     this.dateCreated = new Date().toISOString();
     this.dateCompleted = null;
   }
+  toggle() {
+    this.completed = !this.completed;
+    this.dateCompleted = this.completed ? new Date().toISOString() : null;
+  }
 }

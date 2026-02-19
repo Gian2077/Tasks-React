@@ -114,8 +114,7 @@ Vite will build the application and it can be accessed either by pressing ctrl +
 
 - [x] Fix known issues from 2.0
 - [x] Create Providers Directory
-- [x] Create Task Class
-- [ ] Create Task Class Methods
+- [x] Create Task Object
 - [ ] Add Task Description
 - [ ] Create Task Line Data Structure
 - [ ] Add Task Lines

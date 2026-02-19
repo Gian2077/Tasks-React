@@ -87,11 +87,10 @@ export function TaskProvider({ children }) {
     setTargetTask(null);
   };
   const addTask = (formData) => {
-    const title = formData.get("title");
     setTasks((prevState) => {
       const task = {
         id: crypto.randomUUID(),
-        title: title,
+        title: formData.get("title"),
         type: formData.get("type"),
         completed: false,
         dateCreated: new Date().toISOString(),
