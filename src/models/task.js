@@ -1,8 +1,9 @@
 export class Task {
-  constructor(title, type) {
+  constructor(title, type, description) {
     this.id = crypto.randomUUID();
     this.title = title;
     this.type = type;
+    this.description = description || "This Task has no description.";
     this.completed = false;
     this.dateCreated = new Date().toISOString();
     this.dateCompleted = null;
