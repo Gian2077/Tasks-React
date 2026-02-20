@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "./FormTask.module.css";
-export function FormTask({ onSubmit, taskTitle, taskType }) {
+export function FormTask({ onSubmit, taskTitle, taskType, taskDescription }) {
   const [type, setType] = useState("");
   useEffect(() => {
     if (taskType) {
@@ -74,9 +74,12 @@ export function FormTask({ onSubmit, taskTitle, taskType }) {
             name="description"
             id="description"
             placeholder="Task Description"
+            defaultValue={taskDescription}
           ></textarea>
         </div>
-        <button className={styles.btn}>Add Task</button>
+        <button className={styles.btn}>
+          {taskTitle ? "Edit Task" : "Add Task"}
+        </button>
       </form>
     </>
   );

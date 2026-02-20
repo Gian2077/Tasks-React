@@ -37,6 +37,7 @@ export function Dialog({ isOpen, onClose }) {
               onSubmit={handleFormSubmit}
               taskTitle={targetTask?.title}
               taskType={targetTask?.type}
+              taskDescription={targetTask?.description}
             />
           )}
         </div>

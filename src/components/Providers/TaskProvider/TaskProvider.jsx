@@ -92,6 +92,8 @@ export function TaskProvider({ children }) {
         id: crypto.randomUUID(),
         title: formData.get("title"),
         type: formData.get("type"),
+        description:
+          formData.get("description") || "This Task has no description.",
         completed: false,
         dateCreated: new Date().toISOString(),
         dateCompleted: null,
@@ -121,6 +123,7 @@ export function TaskProvider({ children }) {
             ...task,
             title: formData.get("title"),
             type: formData.get("type"),
+            description: formData.get("description"),
           };
         }
         return task;

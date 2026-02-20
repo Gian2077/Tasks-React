@@ -34,11 +34,12 @@ export function Task({ task }) {
   }, [task.title]);
   return (
     <>
-      <li
-        className={`${styles.task} ${task.completed ? styles.completed : ""}`}
-      >
+      <li className={`${styles.task} `}>
         <details className={styles.details}>
-          <summary className={styles.summary} ref={taskRef}>
+          <summary
+            className={`${styles.summary} ${task.completed ? styles.completed : ""}`}
+            ref={taskRef}
+          >
             <div className={styles.wrapper}>
               <h3
                 className={`${styles.title} ${isOverflowing ? styles.overflowing : ""}`}
@@ -56,7 +57,7 @@ export function Task({ task }) {
               <ButtonTaskDelete onClick={() => deleteTask(task)} />
             </div>
           </summary>
-          <p>Details for task</p>
+          <p>{task.description}</p>
         </details>
       </li>
     </>
